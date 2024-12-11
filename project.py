@@ -1,191 +1,211 @@
 import random
-# menu หลัก
+
+# Main Menu
 def mainmenu():
-    print("\n[เมนูหลัก]")
-    print("1.รายการสั่งอาหาร")
-    print("2.รายการสั่งเครื่องดื่ม")
-    print("3.รายสุ่มอาหาร")
-    print("4.รายสุ่มเครื่องดื่ม")
-    print("0.ออกจากโปรแกรม")
+    print("\n================== [MAIN MENU] ==================")
+    print("1. Food Order")
+    print("2. Drink Order")
+    print("3. Random Food")
+    print("4. Random Drink")
+    print("0. Exit Program")
+    print("=================================================")
 
-# menu 1 รายการสั่งอาหาร
-def menu_food() :
-    while True :
-        print("\n[รายการสั่งอาหาร]")
-        if work == 0 :
+# Menu 1: Food Order
+def menu_food():
+    while True:
+        print("\n[Food Order]")
+        if work == 0:
             return 0
-        elif work == 1 :
+        elif work == 1:
             list_food()
-        else : 
+        else:
             pass
 
-# menu 2 รายการสั่งเครื่องดื่ม
-def menu_drink() :
-    while True :
-        print("\n[รายการสั่งเครื่องดื่ม]")
-        if work == 0 :
+# Menu 2: Drink Order
+def menu_drink():
+    while True:
+        print("\n[Drink Order]")
+        if work == 0:
             return 0
-        elif work == 2 :
+        elif work == 2:
             list_drink()
-        else :
+        else:
             pass
 
-# menu 3 รายสุ่มอาหาร
-def menu_foodrand() :
-    while True :
-        print("\n[รายการสุ่มอาหาร]")
-        if work == 0 :
+# Menu 3: Random Food
+def menu_foodrand():
+    while True:
+        print("\n[Random Food]")
+        if work == 0:
             return 0
-        elif work == 3 :
+        elif work == 3:
             rand_food()
-        else :
+        else:
             pass
 
-# menu 4 รายสุ่มเครื่องดื่ม
-def menu_foodrand() :
-    while True :
-        print("\n[รายการสุ่มอาหาร]")
-        if work == 0 :
+# Menu 4: Random Drink
+def menu_drinkrand():
+    while True:
+        print("\n[Random Drink]")
+        if work == 0:
             return 0
-        elif work == 4 :
+        elif work == 4:
             rand_drink()
-        else :
+        else:
             pass
 
-# function 1 รายการสั่งอาหาร
-def list_food() :
-    print("\n[เลือกเมนูอาหาร]")
-    print("<<เมนูอาหารประเภทจานเดียว>>")
-    print("กด 1 : ข้าวผัดรวมมิตร 50 บาท  ","กด 2 : ข้าวผัดคะน้าหมูกรอบ 50 บาท  ","กด 3 : ข้าวผัดกะเพราหมูสับ 40 บาท  ","กด 4 : ข้าวหมูทอดกระเทียม 40 บาท")
-    print("<<เมนูอาหารประเภทผัด/ทอด>>")
-    print("กด 5 : ทอดมันกุ้ง 55 บาท  ","    กด 6 : กุ้งชุบแป้งทอด 55 บาท  ","     กด 7 : ผัดผงกะหรี่ 65 บาท  ","       กด 8 : ผัดฉ่าทะเล 65 บาท  ")
-    print("<<เมนูอาหารประเภทต้ม>>")
-    print("กด 9 : ต้มจืดหมูสับ 50 บาท  ","  กด 10 : ต้มโคล้งหม้อไฟ 50 บาท  ","   กด 11 : ซุปเปอร์ตีนไก่หม้อไฟ 60 บาท  "," กด 12 : ต้มยำทะเล 60 บาท  ")
-    print("กด 0 : เมื่อคุณยืนยันจะสั่งเมนู")
+# Function 1: List Food
+def list_food():
+    print("\n================ [FOOD MENU] ================")
+    print("<< Single Dishes >>")
+    print("1: Mixed Fried Rice - 50 THB")
+    print("2: Fried Rice with Crispy Pork and Kale - 50 THB")
+    print("3: Basil Pork Fried Rice - 40 THB")
+    print("4: Garlic Pork Fried Rice - 40 THB")
+    print("<< Stir-fried/Deep-fried Dishes >>")
+    print("5: Shrimp Cakes - 55 THB")
+    print("6: Fried Shrimp - 55 THB")
+    print("7: Stir-fried Curry Powder - 65 THB")
+    print("8: Stir-fried Spicy Seafood - 65 THB")
+    print("<< Soups >>")
+    print("9: Clear Soup with Minced Pork - 50 THB")
+    print("10: Hot & Spicy Soup (Tom Klong) - 50 THB")
+    print("11: Chicken Feet Super Soup - 60 THB")
+    print("12: Seafood Tom Yum Soup - 60 THB")
+    print("0: Confirm Your Order")
+    print("============================================")
 
     sum_food = 0
     item = 1
-    while item > 0 :
-        item = int(input("เลือกเมนูอาหาร : "))
-        if item == 1 or item == 2 :
+    while item > 0:
+        item = int(input("Choose a menu item: "))
+        if item == 1 or item == 2:
             sum_food += 50
-        elif item == 3 or item == 4 :
+        elif item == 3 or item == 4:
             sum_food += 40
-        elif item == 5 or item == 6 :
+        elif item == 5 or item == 6:
             sum_food += 55
-        elif item == 7 or item == 8 :
+        elif item == 7 or item == 8:
             sum_food += 65
-        elif item == 9 or item == 10 :
+        elif item == 9 or item == 10:
             sum_food += 50
-        elif item == 11 or item == 12 :
+        elif item == 11 or item == 12:
             sum_food += 60
-        elif item == 0 :
+        elif item == 0:
             break
-        else :
-            print("ไม่มีอาหารที่คุณเลือก")
-    print("รวมราคาทั้งหมด",sum_food,"บาท")
-    while sum_food != 0 :
-        print("\n<<เมนูคิดเงิน>>") 
-        cash = int(input("เงินสด : "))
-        if cash < sum_food :
-            print("ยอดเงินของคุณไม่เพียงพอ กรุณากรอกใหม่อีกครั้ง")
-        elif cash >= sum_food :
+        else:
+            print("The menu item you selected is not available.")
+    print("Total price:", sum_food, "THB")
+    while sum_food != 0:
+        print("\n<<Payment Menu>>")
+        cash = int(input("Cash: "))
+        if cash < sum_food:
+            print("Insufficient funds. Please try again.")
+        elif cash >= sum_food:
             change = cash - sum_food
             break
-    print("เงินทอน ", change , "บาท")
+    print("Change:", change, "THB")
 
-# function 2 รายการเครื่องดื่ม
-def list_drink() :
-    print("\n[เลือกเมนูเครื่องดื่ม]")
-    print("<<เมนูเครื่องดื่มประเภทร้อน>>")
-    print("กด 1 : อเมริกาโน่ 30 บาท  ","      กด 2 : เอสเพรสโซ่ 30 บาท  ","      กด 3 : มอคค่า 30 บาท  ","        กด 4 : ลาเต้ 30 บาท  ")
-    print("<<เมนูเครื่องดื่มประเภทเย็น")
-    print("กด 5 : ชาไทยเย็น 30 บาท ","       กด 6 : ชาเขียวเย็น 30 บาท ","       กด 7 : นทสดเย็น 30 บาท ","       กด 8 : โอวัลตินเย็น 30 บาท ")
-    print("<<เมนูเครื่องดื่มประเภทปั่น>>") 
-    print("กด 9 : นมหมีโอวัลตินปั่น 35 บาท ","  กด 10 : นมหมีสตอเบอรี่ปั่น 35 บาท ","   กด 11 : นมหมีน้ำผึ้งปั่น 40 บาท ","   กด 12 : นมหมีบราวชูก้าปั่น 40 บาท ")
-    print("กด 0 : เมื่อคุณยืนยันจะสั่งเมนู")
+# Function 2: List Drinks
+def list_drink():
+    print("\n================ [DRINK MENU] ================")
+    print("<< Hot Drinks >>")
+    print("1: Americano - 30 THB")
+    print("2: Espresso - 30 THB")
+    print("3: Mocha - 30 THB")
+    print("4: Latte - 30 THB")
+    print("<< Iced Drinks >>")
+    print("5: Thai Iced Tea - 30 THB")
+    print("6: Green Tea - 30 THB")
+    print("7: Fresh Milk - 30 THB")
+    print("8: Ovaltine - 30 THB")
+    print("<< Blended Drinks >>")
+    print("9: Ovaltine Bear - 35 THB")
+    print("10: Strawberry Bear - 35 THB")
+    print("11: Honey Bear - 40 THB")
+    print("12: Brown Sugar Bear - 40 THB")
+    print("0: Confirm Your Order")
+    print("============================================")
+    
     sum_food = 0
     item = 1
-    while item > 0 :
-        item = int(input("เลือกเมนูอาหาร : "))
-        if item == 1 or item == 2 :
+    while item > 0:
+        item = int(input("Choose a menu item: "))
+        if item == 1 or item == 2 or item == 3 or item == 4:
             sum_food += 30
-        elif item == 3 or item == 4 :
+        elif item == 5 or item == 6 or item == 7 or item == 8:
             sum_food += 30
-        elif item == 5 or item == 6 :
-            sum_food += 30
-        elif item == 7 or item == 8 :
-            sum_food += 30
-        elif item == 9 or item == 10 :
+        elif item == 9 or item == 10:
             sum_food += 35
-        elif item == 11 or item == 12 :
+        elif item == 11 or item == 12:
             sum_food += 40
-        elif item == 0 :
+        elif item == 0:
             break
-        else :
-            print("ไม่มีเครื่องดื่มที่คุณเลือก")
-    print("รวมราคาทั้งหมด",sum_food,"บาท")
-    while sum_food != 0 :
-        print("\n<<เมนูคิดเงิน>>") 
-        cash = int(input("เงินสด : "))
-        if cash < sum_food :
-            print("ยอดเงินของคุณไม่เพียงพอ กรุณากรอกใหม่อีกครั้ง")
-        elif cash >= sum_food :
+        else:
+            print("The drink you selected is not available.")
+    print("Total price:", sum_food, "THB")
+    while sum_food != 0:
+        print("\n<<Payment Menu>>")
+        cash = int(input("Cash: "))
+        if cash < sum_food:
+            print("Insufficient funds. Please try again.")
+        elif cash >= sum_food:
             change = cash - sum_food
             break
-    print("เงินทอน ", change , "บาท")
+    print("Change:", change, "THB")
 
-# function 3 รายการสุ่มอาหาร
+# Function 3: Random Food
 def rand_food():
-    print("\n[รายการสุ่มอาหาร]")
-    randfood = ["ข้าวผัดกะเพราหมูสับ","ข้าวผัดรวมมิตร","ข้าวผัดคะน้าหมูกรอบ","ข้าวผัดพริกแกง","ข้าวไข่เจียวหมูสับ","ข้าวหมูทอดกระเทียม","ผัดมาม่า","สุกี้น้ำทะเล","ต้มยำทะเล","ผัดซีอิ๋ว","ราดหน้าทะเลกรอบ","แกงจืดเต้าหู้หมูสับ","ผัดไทยทะเล"]        
-    guess = random.randint(0,len(randfood)-1)
-    print(f'ยินดีด้วยคุณสุ่มได้ : {randfood[guess]}')
+    print("\n[Random Food]")
+    randfood = ["Stir-fried Basil with Minced Pork", "Fried Rice with Mixed Meat", "Fried Rice with Crispy Pork and Kale", "Fried Rice with Curry", "Minced Pork Omelette with Rice", "Garlic Pork on Rice", "Stir-fried Instant Noodles", "Seafood Sukiyaki", "Tom Yum Seafood", "Stir-fried Noodles with Soy Sauce", "Crispy Seafood in Gravy", "Tofu Soup with Minced Pork", "Pad Thai with Seafood"]
+    guess = random.randint(0, len(randfood) - 1)
+    print(f'Congratulations! You got: {randfood[guess]}')
 
-# function 4 รายการสุ่มเครื่องดื่ม
+# Function 4: Random Drink
 def rand_drink():
-    print("\n[รายการสุ่มเครื่องดื่ม]")
-    randdrink = ["ชาไทย","ชาเขียว","ชาเขียว","โกโก้","กาแฟเย็น","สตรอเบอรี่โยเกิร์ต","โอวัลตินเย็น","นมสด","ชามะนาว","โอเลี้ยง","ช็อคโกแลตเย็น","แดงมะนาวโซดา","บลูฮาวายเย็น"]  
-    guess = random.randint(0,len(randdrink)-1)
-    print(f'ยินดีด้วยคุณสุ่มได้ : {randdrink[guess]}')   
+    print("\n[Random Drink]")
+    randdrink = ["Thai Tea", "Green Tea", "Cocoa", "Iced Coffee", "Strawberry Yogurt", "Iced Ovaltine", "Milk", "Lemon Tea", "Iced Black Coffee", "Iced Chocolate", "Red Lime Soda", "Blue Hawaii"]
+    guess = random.randint(0, len(randdrink) - 1)
+    print(f'Congratulations! You got: {randdrink[guess]}')
 
-#ทักทาย
-def meet(name) :
-    print(f'<<ร้านข้าวfood4u>>\n ยินดีต้อนรับคุณ {name}')
+# Greeting
+def meet(name):
+    print(f'<<Food4U>>\nWelcome, {name}!')
     print()
 
-#ขอบคุณ
-def farewell(name) :
+# Farewell
+def farewell(name):
     print()
-    print(f"ขอบคุณ คุณ {name} ที่อุดหนุน\n")
-    print("-----ร้าน food4u-----")
+    print(f"Thank you, {name}, for visiting us.")
+    print("----- Food4U -----")
 
-#ชื่อ
-name = input("ชื่อลูกค้า : ")
+# Input Customer Name
+name = input("Customer Name: ")
 meet(name)
 
-#วนLoopรับค่า menu หลัก
-while True :
+# Main Loop
+while True:
     mainmenu()
-    work=int(input("เลือกหัวข้อเพื่อทำงาน : "))
-    if work == 0 :
+    work = int(input("Please select an option from the menu above: "))
+    print("------------------------------------------------")
+    if work == 0:
         farewell(name)
         break
-    elif work==1:
+    elif work == 1:
         if list_food() == 0:
             farewell(name)
             break
-    elif work==2:
+    elif work == 2:
         if list_drink() == 0:
             farewell(name)
             break
-    elif work==3:
+    elif work == 3:
         if rand_food() == 0:
             farewell(name)
             break
-    elif work==4:
+    elif work == 4:
         if rand_drink() == 0:
             farewell(name)
             break
-    else :
+    else:
         pass
